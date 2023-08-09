@@ -17,10 +17,11 @@
     "@types/mongoose": "^5.11.97",
     "@types/node": "^20.4.6",
     "concurrently": "^8.2.0",
+    "dotenv": "^16.3.1",
     "nodemon": "^3.0.1"
   },
   "scripts": {
     "build": "tsc",
-    "start": "concurrently \"tsc -w\" \"nodemon dist/js/app.js\""
+    "start": "concurrently \"tsc -w\" \"nodemon -r dotenv/config dist/js/app.js\""
   }
 }

@@ -1,7 +1,5 @@
 {
   "env": {
-    "MONGO_USER": "",
-    "MONGO_PASSWORD": "",
-    "MONGO_DB": ""
+    "NODE_ENV": "development"
   }
 }
