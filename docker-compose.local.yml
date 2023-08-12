@@ -10,5 +10,15 @@ services:
       - MONGO_INITDB_ROOT_PASSWORD=${MONGO_INITDB_ROOT_PASSWORD}
     volumes:
       - mongodb_data:/data/db
+  api:
+    depends_on:
+      - mongodb
+    container_name: checkpoint-api
+    env_file: .env
+    build: ./
+    ports:
+      - '4000:4000'
+    environment:
+      - DB_HOST=mongodb
 volumes:
   mongodb_data:

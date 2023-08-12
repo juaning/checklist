@@ -11,7 +11,7 @@ const PORT: string | number = process.env.PORT || 4000
 app.use(cors());
 app.use(todoRoutes);
 
-const uri: string = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@localhost:27017/${process.env.MONGO_DB}?authSource=admin`;
+const uri: string = `mongodb://${process.env.MONGO_INITDB_ROOT_USERNAME}:${process.env.MONGO_INITDB_ROOT_PASSWORD}@${process.env.DB_HOST}:27017/${process.env.MONGO_DB}?authSource=admin`;
 
 console.log(`uri: ${uri}`);
 
