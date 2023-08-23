@@ -13,12 +13,22 @@ services:
   api:
     depends_on:
       - mongodb
-    container_name: checkpoint-api
+    container_name: checklist-api
     env_file: .env
     build: ./
     ports:
       - '4000:4000'
     environment:
       - DB_HOST=mongodb
+  webapp:
+    container_name: checklist-webapp
+    image: webapp-dev
+    build:
+      context: ./webapp
+      target: development
+    volumes:
+      - ./src:/app/src
+    ports:
+      - 3000:3000
 volumes:
   mongodb_data:
